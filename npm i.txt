@@ -1,0 +1,3 @@
+npm install react-bootstrap bootstrap
+npm install --save node-sass
+npm install --save react-router-dom
