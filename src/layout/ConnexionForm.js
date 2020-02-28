@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import '../assets/sass/home/style.scss'
 import logo from '../assets/img/1.png'
 import logo_header from '../assets/img/logo.png'
+import { BrowserRouter, Route, Redirect } from 'react-router-dom'
+import Teste from '../teste'
 
 class ConnexionForm extends Component {
     constructor(props) {
@@ -22,7 +24,8 @@ class ConnexionForm extends Component {
     }
 
     testeFunction = () => {
-        alert(this.state.password);
+        //alert(this.state.password);
+        //return <Redirect to={"/dashboard"}/>;
     }
 
     render() {
