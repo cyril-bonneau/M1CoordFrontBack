@@ -3,13 +3,33 @@ import '../../assets/sass/home/style.scss'
 import logo from '../../assets/img/1.png'
 import logo_header from '../../assets/img/logo.png'
 
+
 class InscriptionForm extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-                 
+            user:""
         }
+
+        this.getUser()
+        console.log(this.state)
+    }
+
+    getUser = () => {
+        fetch('http://localhost:9000/')
+
+        .then((res) => {
+            return res.text()
+        
+        })
+        .then((data) => {this.setState({
+            user:data
+        }
+        )
+        console.log(this.state);
+
+    })
     }
 
     handleChange = (event)=>{
