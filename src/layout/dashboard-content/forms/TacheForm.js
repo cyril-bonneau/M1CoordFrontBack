@@ -8,11 +8,11 @@ class TacheForm extends Component {
                 <form>
                     <div>
                         <label className="label-input">Titre du sprint</label>
-                        <input type="text" name="" placeholder="Veullez renseigner un titre..." style={{float: "left",width: "64%",marginLeft: "16%"}} />
+                        <input className="input-titre" type="text" name="" placeholder="Veullez renseigner un titre..." />
                     </div>
                     <div>
                         <label className="label-input">Temps de réalisation (heure)</label>
-                        <select style={{width: "64%",marginLeft: "2%"}}>
+                        <select className="label-select-first">
                             <option>Veuillez selectionner un temps</option>
                             <option>xxx</option>
                             <option>xxx</option>
@@ -20,7 +20,7 @@ class TacheForm extends Component {
                     </div>
                     <div>
                         <label className="label-input">Statut</label>
-                        <select style={{width: "64%",marginLeft: "23%"}}>
+                        <select className="label-select-second">
                             <option>Veuillez selectionner un statut</option>
                             <option>xxx</option>
                             <option>xxx</option>
@@ -28,7 +28,7 @@ class TacheForm extends Component {
                     </div>
                     <div>
                         <label className="label-input">Description</label>
-                        <textarea placeholder="veuillez saisir une description" style={{position: "absolute",left: "53%",width: "42%"}}></textarea>
+                        <textarea className="textarea-description" placeholder="veuillez saisir une description"></textarea>
                     </div>
                     <input type="submit" name="" value="Enregistrer" style={{marginTop: "10%"}} />
                 </form>

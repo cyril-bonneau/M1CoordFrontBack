@@ -9,29 +9,29 @@ class ClientForm extends Component {
                 <form>
                     <div>
                         <label className="label-input">Dénomination sociale</label>
-                        <input type="text" name="" placeholder="Veullez renseigner un titre..." style={{float: "left",width: "70%"}} />
+                        <input className="input-denomination" type="text" name="" placeholder="Veullez saisir une dénomination sociale..." />
                     </div>
                     <div>
                         <label className="label-input">Adresse</label>
-                        <input className="label-input-rue" type="number" name="" placeholder="Rue" style={{float: "left", marginLeft: "16%", width: "15%", marginTop: "1%"}} />
-                        <input className="label-input-ville" type="text" name="" placeholder="Ville" style={{width: "25%",float: "left",height: "37px"}} />
-                        <input className="label-input-code" type="number" name="" placeholder="Code" style={{float: "left",marginTop: "1%",width: "23%"}} />
+                        <input className="label-input-rue" type="number" name="" placeholder="Rue" />
+                        <input className="label-input-ville" type="text" name="" placeholder="Ville" />
+                        <input className="label-input-code" type="number" name="" placeholder="Code" />
                     </div>
                     <div>
                         <label className="label-input">Nom</label>
-                        <input type="text" name="" placeholder="Votre nom" style={{float: "left",width: "70%",marginLeft: "19%"}} />
+                        <input className="input-nom" type="text" name="" placeholder="Votre nom" />
                     </div>
                     <div>
                         <label className="label-input">Prénom</label>
-                        <input type="text" name="" placeholder="Votre prénom" style={{float: "left",width: "70%",marginLeft: "16%"}} />
+                        <input className="input-prenom" type="text" name="" placeholder="Votre prénom" />
                     </div>
                     <div>
                         <label className="label-input">Téléphone</label>
-                        <input type="text" name="" placeholder="Votre téléphone" style={{float: "left",width: "70%",marginLeft: "13%"}} />
+                        <input className="input-telephone" type="text" name="" placeholder="Votre téléphone" />
                     </div>
                     <div>
                         <label className="label-input">Email</label>
-                        <input type="text" name="" placeholder="Votre email de contact" style={{float: "left",width: "70%",marginLeft: "18%"}} />
+                        <input className="input-email" type="text" name="" placeholder="Votre email de contact" />
                     </div>
                     <br/>
                     <input type="submit" name="" value="Enregistrer" />

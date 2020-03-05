@@ -9,23 +9,23 @@ class SprintForm extends Component {
                 <form>
                     <div>
                         <label className="label-input">Dénomination sociale</label>
-                        <input type="text" name="" placeholder="Veullez renseigner un titre..." style={{float: "left",width: "70%"}} />
+                        <input className="input-denomination" type="text" name="" placeholder="Veullez renseigner un titre..." />
                     </div>
                     <div>
                         <label className="label-input">Date de début</label>
-                        <input className="label-input-rue" type="number" name="" placeholder="jour" style={{float: "left", marginLeft: "11%", width: "15%", marginTop: "1%"}} />
-                        <input className="label-input-ville" type="text" name="" placeholder="mois" style={{width: "25%",float: "left",height: "37px"}} />
-                        <input className="label-input-code" type="number" name="" placeholder="année" style={{float: "left",marginTop: "1%",width: "23%"}} />
+                        <input className="label-input-jour" type="number" name="" placeholder="jour" />
+                        <input className="label-input-mois" type="text" name="" placeholder="mois" />
+                        <input className="label-input-annee" type="number" name="" placeholder="année" />
                     </div>
                     <div>
                         <label className="label-input">Date de fin</label>
-                        <input className="label-input-rue" type="number" name="" placeholder="jour" style={{float: "left", marginLeft: "14%", width: "15%", marginTop: "1%"}} />
-                        <input className="label-input-ville" type="text" name="" placeholder="mois" style={{width: "25%",float: "left",height: "37px"}} />
-                        <input className="label-input-code" type="number" name="" placeholder="année" style={{float: "left",marginTop: "1%",width: "23%"}} />
+                        <input className="label-input-jour-second" type="number" name="" placeholder="jour" />
+                        <input className="label-input-mois-second" type="text" name="" placeholder="mois" />
+                        <input className="label-input-annee-second" type="number" name="" placeholder="année" />
                     </div>
                     <div>
                         <label className="label-input">Statut</label>
-                        <select style={{width: "70%",marginLeft: "17%"}}>
+                        <select className="label-select">
                             <option>Veuillez selectionner un statut</option>
                             <option>xxx</option>
                             <option>xxx</option>

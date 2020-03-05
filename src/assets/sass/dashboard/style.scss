@@ -1,9 +1,108 @@
-div{
-    div{
+div {
+    div {
         .label-input {
             float: left;
             margin-top: 2%;
             margin-left: 3%;
+        }
+    }
+}
+
+div {
+    div {
+        input.label-input-rue {
+            float: left; 
+            margin-left: 16%; 
+            width: 15%; 
+            margin-top: 1%;
+        }
+        input.label-input-ville {
+            width: 25%;
+            float: left;
+            height: 37px;
+        }
+        input.label-input-code {
+            float: left;
+            margin-top: 1%;
+            width: 23%;
+        }
+        input.input-nom {
+            float: left;
+            width: 70%;
+            margin-left: 19%;
+        }
+        input.input-prenom {
+            float: left;
+            width: 70%;
+            margin-left: 16%;
+        }
+        input.input-telephone {
+            float: left;
+            width: 70%;
+            margin-left: 13%;
+        }
+        input.input-email {
+            float: left;
+            width: 70%;
+            margin-left: 18%;
+        }
+        input.input-denomination {
+            float: left;
+            width: 70%;
+        }
+        input.label-input-jour {
+            float: left; 
+            margin-left: 11%;
+            width: 15%;
+            margin-top: 1%;
+        }
+        input.label-input-mois {
+            width: 25%;
+            float: left;
+            height: 37px;
+        }
+        input.label-input-annee {
+            float: left;
+            margin-top: 1%;
+            width: 23%;
+        }
+        input.label-input-jour-second {
+            float: left;
+            margin-left: 14%;
+            width: 15%;
+            margin-top: 1%;
+        }
+        input.label-input-mois-second {
+            width: 25%;
+            float: left;
+            height: 37px;
+        }
+        input.label-input-annee-second {
+            float: left;
+            margin-top: 1%;
+            width: 23%;
+        }
+        select.label-select {
+            width: 70%;
+            margin-left: 17%;
+        }
+        input.input-titre {
+            float: left;
+            width: 64%;
+            margin-left: 16%;
+        }
+        select.label-select-first {
+            width: 64%;
+            margin-left: 2%;
+        }
+        select.label-select-second {
+            width: 64%;
+            margin-left: 23%;
+        }
+        textarea.textarea-description {
+            position: absolute;
+            left: 53%;
+            width: 42%;
         }
     }
 }
