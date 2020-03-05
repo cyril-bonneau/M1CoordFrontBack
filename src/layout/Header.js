@@ -3,7 +3,7 @@ import '../assets/sass/home/style.scss'
 import logo from '../assets/img/1.png'
 import logo_header from '../assets/img/logo.png'
 import InscriptionForm from './home-content/InscriptionForm'
-import ConnexionForm from './ConnexionForm'
+import ConnexionForm from './home-content/ConnexionForm'
 
 class Header extends Component {
     constructor(props) {

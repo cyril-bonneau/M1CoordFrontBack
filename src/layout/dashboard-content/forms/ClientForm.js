@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import '../../../assets/sass/dashboard/style.scss'
 
 class ClientForm extends Component {
 
@@ -7,24 +8,31 @@ class ClientForm extends Component {
             <div>
                 <form>
                     <div>
-                        <label style={{float: "left",marginTop: "2%"}}>Dénomination sociale</label>
+                        <label className="label-input">Dénomination sociale</label>
                         <input type="text" name="" placeholder="Veullez renseigner un titre..." style={{float: "left",width: "70%"}} />
                     </div>
-                    <br/>
                     <div>
-                        <label style={{float: "left",marginTop: "2%"}}>Adresse</label>
-                        <input type="number" name="" placeholder="Rue" style={{float: "left", marginLeft: "21%", width: "15%", marginTop: "1%"}} />
-                        <input type="text" name="" placeholder="Ville" style={{width: "20%",float: "left",height: "37px"}} />
-                        <input type="number" name="" placeholder="Code" style={{float: "left",marginTop: "1%",width: "23%"}} />
+                        <label className="label-input">Adresse</label>
+                        <input className="label-input-rue" type="number" name="" placeholder="Rue" style={{float: "left", marginLeft: "16%", width: "15%", marginTop: "1%"}} />
+                        <input className="label-input-ville" type="text" name="" placeholder="Ville" style={{width: "25%",float: "left",height: "37px"}} />
+                        <input className="label-input-code" type="number" name="" placeholder="Code" style={{float: "left",marginTop: "1%",width: "23%"}} />
                     </div>
-                    <br/>
                     <div>
-                        <label style={{float: "left",marginTop: "2%"}}>Nom</label>
-                        <input type="text" name="" placeholder="Votre nom" style={{float: "left",width: "70%"}} />
+                        <label className="label-input">Nom</label>
+                        <input type="text" name="" placeholder="Votre nom" style={{float: "left",width: "70%",marginLeft: "19%"}} />
                     </div>
-                    <label>Prénom</label><input type="text" name="" placeholder="Votre prénom" />
-                    <label>Téléphone</label><input type="text" name="" placeholder="Votre téléphone" />
-                    <label>Email</label><input type="text" name="" placeholder="Votre email de contact" />
+                    <div>
+                        <label className="label-input">Prénom</label>
+                        <input type="text" name="" placeholder="Votre prénom" style={{float: "left",width: "70%",marginLeft: "16%"}} />
+                    </div>
+                    <div>
+                        <label className="label-input">Téléphone</label>
+                        <input type="text" name="" placeholder="Votre téléphone" style={{float: "left",width: "70%",marginLeft: "13%"}} />
+                    </div>
+                    <div>
+                        <label className="label-input">Email</label>
+                        <input type="text" name="" placeholder="Votre email de contact" style={{float: "left",width: "70%",marginLeft: "18%"}} />
+                    </div>
                     <br/>
                     <input type="submit" name="" value="Enregistrer" />
                 </form>
