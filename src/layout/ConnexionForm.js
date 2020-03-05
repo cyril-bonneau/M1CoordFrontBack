@@ -2,6 +2,11 @@ import React, { Component } from 'react'
 import '../assets/sass/home/style.scss'
 import logo from '../assets/img/1.png'
 import logo_header from '../assets/img/logo.png'
+//import { Router, BrowserRouter } from 'react-router-dom'
+//import { Route } from 'react-router'
+//import BodyDashboard from './dashboard-content/Body'
+//import { useHistory } from "react-router-dom";
+//import Teste from './Teste'
 
 class ConnexionForm extends Component {
     constructor(props) {
@@ -22,7 +27,10 @@ class ConnexionForm extends Component {
     }
 
     testeFunction = () => {
-        alert(this.state.password);
+        //let history = useHistory();
+        //history.push("/dashboard");
+        alert("teste")
+        //return()
     }
 
     render() {
