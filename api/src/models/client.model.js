@@ -1,36 +1,40 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const userSchema = new Schema({
-    userName: {
+const clientSchema = new Schema({
+    clientDenomination: {
         type: String,
         required: true,
         unique: true,
         lowercase: true
     },
-    userSociety: {
+    clientAdresse: {
         type: String,
         required: true,
         minlength: 4,
         maxlength: 128
     },
-    userSiret: {
+    clientFirstName: {
         type: String
     },
-    userMail: {
+    clientSecondName: {
         type: String
     },
-    userTelephone: {
+    clientTelephone: {
         type: Number
     },
-    userStatus: {
+    clientMail: {
         type: Boolean
     },
-    userProfil: {
-        type: String
+    //FOREIGN KEY 
+    userId: {
+        type: Schema.Types.ObjectId, ref: 'user'
     },
 }, {
     timestamps: true
 });
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('client', clientSchema);
+
+//return javascript object {user Schema}
+const user = mongoose.model('user', userSchema);
