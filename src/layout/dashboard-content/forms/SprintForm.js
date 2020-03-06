@@ -7,33 +7,65 @@ class SprintForm extends Component {
         return (
             <div>
                 <form>
-                    <div>
-                        <label className="label-input">Dénomination sociale</label>
-                        <input className="input-denomination" type="text" name="" placeholder="Veullez renseigner un titre..." />
+                    <div class="form-row">
+                        <div className="form-row col-md-12">
+                            <div className="form-group col-md-3">
+                                <label for="inputEmail4">Dénomination sociale</label>
+                            </div>
+                            <div className="form-group col-md-9">
+                                <input type="text" className="form-control" id="inputDenomination4" placeholder="Veullez saisir une dénomination sociale..." />
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div className="form-group col-md-3">
+                                <label for="inputEmail4">Date de début</label>
+                            </div>
+                            <div className="form-group col-md-2">
+                                <input type="text" className="form-control" id="inputCity" placeholder="Jour..." />
+                            </div>
+                            <div className="form-group col-md-4">
+                                <input type="text" className="form-control" id="inputCity" placeholder="Mois..." style={{marginLeft: "13%"}} />
+                            </div>
+                            <div className="form-group col-md-2">
+                                <input type="text" className="form-control" id="inputZip" placeholder="Année..." style={{width: "95%"}} />
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div className="form-group col-md-3">
+                                <label for="inputEmail4">Date de fin</label>
+                            </div>
+                            <div className="form-group col-md-2">
+                                <input type="text" className="form-control" id="inputCity" placeholder="Jour..." />
+                            </div>
+                            <div className="form-group col-md-4">
+                                <input type="text" className="form-control" id="inputCity" placeholder="Mois..." style={{marginLeft: "13%"}} />
+                            </div>
+                            <div className="form-group col-md-2">
+                                <input type="text" className="form-control" id="inputZip" placeholder="Année..." style={{width: "95%"}} />
+                            </div>
+                        </div>
+                        <div className="form-row col-md-12">
+                            <div className="form-group col-md-3">
+                                <label for="inputEmail4">Status</label>
+                            </div>
+                            <div className="form-group col-md-8" style={{marginLeft: "8%"}}>
+                                <input type="radio" id="attente" name="attente"/> 
+                                <div className="toto" style={{marginLeft: "4%"}}>
+                                    Attente
+                                </div>  
+                                <input type="radio" id="cours" name="cours"/>
+                                <div className="toto" style={{marginLeft: "4%"}}>
+                                    En cours
+                                </div> 
+                                <input type="radio" id="fini" name="fini"/>
+                                <div className="toto" style={{marginLeft: "4%"}}>
+                                    Terminé
+                                </div>
+                            </div>
+                        </div>                     
                     </div>
-                    <div>
-                        <label className="label-input">Date de début</label>
-                        <input className="label-input-jour" type="number" name="" placeholder="jour" />
-                        <input className="label-input-mois" type="text" name="" placeholder="mois" />
-                        <input className="label-input-annee" type="number" name="" placeholder="année" />
-                    </div>
-                    <div>
-                        <label className="label-input">Date de fin</label>
-                        <input className="label-input-jour-second" type="number" name="" placeholder="jour" />
-                        <input className="label-input-mois-second" type="text" name="" placeholder="mois" />
-                        <input className="label-input-annee-second" type="number" name="" placeholder="année" />
-                    </div>
-                    <div>
-                        <label className="label-input">Statut</label>
-                        <select className="label-select">
-                            <option>Veuillez selectionner un statut</option>
-                            <option>xxx</option>
-                            <option>xxx</option>
-                        </select>
-                    </div>
-                    <br/>
-                    <input type="submit" name="" value="Enregistrer" />
-                    <input type="reset" name="" value="Annuler"/>
+                    <button type="submit" class="btn btn-success">Enregistrer</button>
+                    <button type="submit" class="btn btn-danger">Annuler</button>
                 </form>
             </div>
         )

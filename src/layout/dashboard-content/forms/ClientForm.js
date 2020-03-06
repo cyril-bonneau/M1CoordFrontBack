@@ -6,7 +6,6 @@ class ClientForm extends Component {
     render() {
         return (
             <div>
-                
                 <form>
                     <div class="form-row">
                         <div className="form-row col-md-12">
@@ -25,10 +24,10 @@ class ClientForm extends Component {
                                 <input type="text" className="form-control" id="inputCity" placeholder="Rue..." />
                             </div>
                             <div className="form-group col-md-4">
-                                <input type="text" className="form-control" id="inputCity" placeholder="Ville..." />
+                                <input type="text" className="form-control" id="inputCity" placeholder="Ville..." style={{marginLeft: "13%"}} />
                             </div>
                             <div className="form-group col-md-2">
-                                <input type="text" className="form-control" id="inputZip" placeholder="Code..." />
+                                <input type="text" className="form-control" id="inputZip" placeholder="Code..." style={{width: "95%"}} />
                             </div>
                         </div>
                         <div className="form-row col-md-12">
@@ -66,7 +65,7 @@ class ClientForm extends Component {
                     </div>
                     <button type="submit" class="btn btn-success">Enregistrer</button>
                     <button type="submit" class="btn btn-danger">Annuler</button>
-                    </form>
+                </form>
             </div>
         )
     }

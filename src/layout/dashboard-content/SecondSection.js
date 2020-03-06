@@ -68,7 +68,7 @@ class SecondSection extends Component {
                                             <div id="tab-5e5f5526e28ea-4" aria-labelledby="ui-id-6" className="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style={{display: "none"}}>
                                                 <p>
                                                     <strong>
-                                                        Veuillez ajouter un tâche
+                                                        Veuillez ajouter une tâche
                                                     </strong>
                                                 </p>
                                                 <TacheForm />
