@@ -30,7 +30,8 @@ class TacheForm extends Component {
                         <label className="label-input">Description</label>
                         <textarea className="textarea-description" placeholder="veuillez saisir une description"></textarea>
                     </div>
-                    <input type="submit" name="" value="Enregistrer" style={{marginTop: "10%"}} />
+                    <input type="submit" name="" value="Enregistrer"/>
+                    <input type="reset" name="" value="Annuler"/>
                 </form>
             </div>
         )

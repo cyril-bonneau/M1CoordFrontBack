@@ -104,5 +104,51 @@ div {
             left: 53%;
             width: 42%;
         }
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: left;
+            bottom: 10%;
+          }
+          input[type=submit]:hover {
+            background-color: #50BD55;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: left;
+            bottom: 10%;
+          }
+          input[type=reset] {
+            background-color: #FF3333;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: left;
+            bottom: 10%;
+          }
+          input[type=reset]:hover {
+            background-color: #E52F2F;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: left;
+            
+          }
+          div {
+            .toto {
+                display: inline-block;
+                width: 100px;
+              }
+          }
     }
 }

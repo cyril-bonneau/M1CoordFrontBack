@@ -35,6 +35,7 @@ class ClientForm extends Component {
                     </div>
                     <br/>
                     <input type="submit" name="" value="Enregistrer" />
+                    <input type="reset" name="" value="Annuler"/>
                 </form>
             </div>
         )
