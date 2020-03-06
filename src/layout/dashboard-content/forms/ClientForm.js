@@ -6,37 +6,67 @@ class ClientForm extends Component {
     render() {
         return (
             <div>
+                
                 <form>
-                    <div>
-                        <label className="label-input">Dénomination sociale</label>
-                        <input className="input-denomination" type="text" name="" placeholder="Veullez saisir une dénomination sociale..." />
+                    <div class="form-row">
+                        <div className="form-row col-md-12">
+                            <div className="form-group col-md-3">
+                                <label for="inputEmail4">Dénomination sociale</label>
+                            </div>
+                            <div className="form-group col-md-9">
+                                <input type="text" className="form-control" id="inputDenomination4" placeholder="Veullez saisir une dénomination sociale..." />
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div className="form-group col-md-3">
+                                <label for="inputEmail4">Adresse</label>
+                            </div>
+                            <div className="form-group col-md-2">
+                                <input type="text" className="form-control" id="inputCity" placeholder="Rue..." />
+                            </div>
+                            <div className="form-group col-md-4">
+                                <input type="text" className="form-control" id="inputCity" placeholder="Ville..." />
+                            </div>
+                            <div className="form-group col-md-2">
+                                <input type="text" className="form-control" id="inputZip" placeholder="Code..." />
+                            </div>
+                        </div>
+                        <div className="form-row col-md-12">
+                            <div className="form-group col-md-3">
+                                <label for="inputEmail4">Nom</label>
+                            </div>
+                            <div className="form-group col-md-9">
+                                <input type="text" className="form-control" id="inputDenomination4" placeholder="Votre nom..." />
+                            </div>
+                        </div>
+                        <div className="form-row col-md-12">
+                            <div className="form-group col-md-3">
+                                <label for="inputEmail4">Prénom</label>
+                            </div>
+                            <div className="form-group col-md-9">
+                                <input type="text" className="form-control" id="inputDenomination4" placeholder="Votre prénom..." />
+                            </div>
+                        </div>
+                        <div className="form-row col-md-12">
+                            <div className="form-group col-md-3">
+                                <label for="inputEmail4">Téléphone</label>
+                            </div>
+                            <div className="form-group col-md-9">
+                                <input type="text" className="form-control" id="inputDenomination4" placeholder="Votre téléphone..." />
+                            </div>
+                        </div>
+                        <div className="form-row col-md-12">
+                            <div className="form-group col-md-3">
+                                <label for="inputEmail4">Email</label>
+                            </div>
+                            <div className="form-group col-md-9">
+                                <input type="text" className="form-control" id="inputDenomination4" placeholder="Votre Email..." />
+                            </div>
+                        </div>                       
                     </div>
-                    <div>
-                        <label className="label-input">Adresse</label>
-                        <input className="label-input-rue" type="number" name="" placeholder="Rue" />
-                        <input className="label-input-ville" type="text" name="" placeholder="Ville" />
-                        <input className="label-input-code" type="number" name="" placeholder="Code" />
-                    </div>
-                    <div>
-                        <label className="label-input">Nom</label>
-                        <input className="input-nom" type="text" name="" placeholder="Votre nom" />
-                    </div>
-                    <div>
-                        <label className="label-input">Prénom</label>
-                        <input className="input-prenom" type="text" name="" placeholder="Votre prénom" />
-                    </div>
-                    <div>
-                        <label className="label-input">Téléphone</label>
-                        <input className="input-telephone" type="text" name="" placeholder="Votre téléphone" />
-                    </div>
-                    <div>
-                        <label className="label-input">Email</label>
-                        <input className="input-email" type="text" name="" placeholder="Votre email de contact" />
-                    </div>
-                    <br/>
-                    <input type="submit" name="" value="Enregistrer" />
-                    <input type="reset" name="" value="Annuler"/>
-                </form>
+                    <button type="submit" class="btn btn-success">Enregistrer</button>
+                    <button type="submit" class="btn btn-danger">Annuler</button>
+                    </form>
             </div>
         )
     }
