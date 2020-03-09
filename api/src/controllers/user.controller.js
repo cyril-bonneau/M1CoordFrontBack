@@ -2,14 +2,16 @@ const User = require('../models/user.model');
 const bcrypt = require('bcrypt');
 
 exports.create = (req, res) => {
-        let hashedPassword = bcrypt.hashSync(req.body.password, 8);
-        console.log(hashedPassword);
+        //let hashedPassword = bcrypt.hashSync(req.body.password, 8);
+        //console.log(hashedPassword);
         const user = new User({
-                email: req.body.email,
-                password: hashedPassword,
-                firstname: req.body.firstname,
-                lastname: req.body.lastname,
-                admin: req.body.admin
+                userName: req.body.userName,
+                userSociety: req.body.userSociety,
+                userSiret: req.body.userSiret,
+                userMail: req.body.userMail,
+                userTelephone: req.body.userTelephone,
+                userStatus: req.body.userStatus,
+                userProfil: req.body.userProfil
             })
             // if (err.error) {
             //     res.send(err);
@@ -22,7 +24,7 @@ exports.create = (req, res) => {
                     message: err.message
                 })
             })
-    }
+        }
     // get all users
 exports.findAll = (req, res) => {
     User.find()
