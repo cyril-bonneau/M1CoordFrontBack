@@ -1,10 +1,11 @@
-const task = require('../models/task.model');
+const Task = require('../models/task.model');
 const bcrypt = require('bcrypt');
 
 exports.create = (req, res) => {
         //let hashedPassword = bcrypt.hashSync(req.body.password, 8);
         //console.log(hashedPassword);
         const task = new Task({
+                taskName: req.body.taskName,
                 taskDescription: req.body.taskDescription,
                 taskStatus: req.body.taskStatus,
                 taskTime: req.body.taskTime
