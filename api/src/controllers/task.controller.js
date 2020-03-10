@@ -65,7 +65,7 @@ exports.updateOne = (req, res) => {
             })
         }
         // res.send(task);
-        old_task.findById(req.params.id)
+        Task.findById(req.params.id)
             .then(newTask => {
                 res.send({
                     new_task: newTask,
