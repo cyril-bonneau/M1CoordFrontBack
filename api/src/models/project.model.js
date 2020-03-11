@@ -39,4 +39,4 @@ const projectSchema = new Schema({
 
 module.exports = mongoose.model('project', projectSchema);
 //return javascript object {client Schema}
-const client = mongoose.model('client', clientSchema);
+//const client = mongoose.model('client', clientSchema);

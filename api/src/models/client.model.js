@@ -24,7 +24,7 @@ const clientSchema = new Schema({
         type: Number
     },
     clientMail: {
-        type: Boolean
+        type: String
     },
     //FOREIGN KEY 
     userId: {
@@ -37,4 +37,4 @@ const clientSchema = new Schema({
 module.exports = mongoose.model('client', clientSchema);
 
 //return javascript object {user Schema}
-const user = mongoose.model('user', userSchema);
+//const user = mongoose.model('user', userSchema);
