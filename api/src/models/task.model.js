@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const Sprint = require('../models/sprint.model');
 
 const taskSchema = new Schema({
     taskName: {
@@ -23,13 +24,13 @@ const taskSchema = new Schema({
         type: Number
     },
     //Foreign Key **********
-    sprintId: {
-        type: Schema.Types.ObjectId, ref: 'sprint'
-    },
+    sprintId:[
+        {type: Schema.Types.ObjectId, ref: 'sprint'}
+    ],
 }, {
     timestamps: true
 });
 
 module.exports = mongoose.model('task', taskSchema);
 //return javascript object {client Schema}
-//const sprint = mongoose.model('sprint', clientSchema);
+//const sprint = mongoose.model('sprint', sprintSchema);

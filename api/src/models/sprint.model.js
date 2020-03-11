@@ -21,13 +21,13 @@ const sprintSchema = new Schema({
         type: String
     },
     //Foreign Key **********
-    projectId: {
-        type: Schema.Types.ObjectId, ref: 'project'
-    },
+    //taskId:[ {
+    //    type: Schema.Types.ObjectId, ref: 'task'
+    //}],
 }, {
     timestamps: true
 });
 
 module.exports = mongoose.model('sprint', sprintSchema);
 //return javascript object {client Schema}
-const project = mongoose.model('project', projectSchema);
+//const project = mongoose.model('project', projectSchema);
