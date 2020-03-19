@@ -2,8 +2,7 @@ import React from 'react'
 import Header from '../layout/Header'
 import Footer from '../layout/Footer'
 import Body from '../layout/home-content/Body'
-import { BrowserRouter, Redirect } from 'react-router-dom';
-import { Route } from 'react-router'
+import { BrowserRouter, Route } from 'react-router-dom';
 import BodyDashboard from '../layout/dashboard-content/Body'
 
 const Pages = () => {
@@ -11,22 +10,12 @@ const Pages = () => {
         <div>
             <Header />
             <BrowserRouter>
-                <Route exact path="/">
-                <Body />
-                </Route>
-                <Route exact path="/dashboard">
-                <BodyDashboard />
-                </Route>
+                <Route path="/" exact component={Body} />
+                <Route path="/dash" exact component={BodyDashboard} />
             </BrowserRouter>
             <Footer />
         </div>
     );
 }
-
-{/*<div>
-        <Header />
-        <Body />
-        <Footer />
-        </div>*/}
 
 export default Pages;

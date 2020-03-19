@@ -1,78 +1,78 @@
-const Client = require('../models/client.model');
 const bcrypt = require('bcrypt');
+const Client = require('../models/client.model')
 
-exports.create = (req, res) => {
-        //let hashedPassword = bcrypt.hashSync(req.body.password, 8);
-        //console.log(hashedPassword);
-        const client = new Client({
-                clientDenomination: req.body.clientDenomination,
-                clientAdresse: req.body.clientAdresse,
-                clientFirstName: req.body.clientFirstName,
-                clientSecondName: req.body.clientSecondName,
-                clientTelephone: req.body.clientTelephone,
-                clientMail: req.body.clientMail
-            })
-            // if (err.error) {
-            //     res.send(err);
-            // } else {
-        client.save()
-            .then(data => {
-                res.send(data);
-            }).catch(err => {
-                res.status(500).send({
-                    message: err.message
-                })
-            })
-        }
-    // get all users
+// obtenir tous les clients
 exports.findAll = (req, res) => {
     Client.find()
-        .then(sprint => {
-            res.send(sprint);
+    .then(clients => {
+        res.send(clients);
+    })
+    .catch(err => {
+        res.status(500).send({
+            message: err.message || "Erreur sur la recherche"
         })
-        .catch(err => {
-            res.status(500).send({
-                message: err.message || "Some error occured when finding the client."
-            })
+    })
+}
+
+// créer un nouveau client
+exports.create = (req, res) => {
+    const client = new Client({
+        clientDenomination: req.body.clientDenomination,
+        clientAdresse: req.body.clientAdresse,
+        clientFirstName: req.body.clientFirstName,
+        clientSecondName: req.body.clientSecondName,
+        clientTelephone: req.body.clientTelephone,
+        clientMail: req.body.clientMail
+    })
+
+    client.save()
+    .then(data => {
+        res.send(data)
+    }).catch(err => {
+        res.status(500).send({
+            message: err.message
         })
+    })
 }
 
 exports.findOne = (req, res) => {
-    console.log(req.params);
+    //console.log(req.params);
+
     Client.findById(req.params.id)
-        .then(client => {
-            if (!client) {
-                return res.status(404).send({
-                    message: "Client not found with id" + req.params.id
-                });
-            }
-            res.send(sprint);
+    .then(client => {
+        if(!client) {
+            return res.status(404).send({
+                message: "Client inconnu !"
+            });
+        }
+        res.send(client)
+    })
+    .catch(err => {
+        return res.status(500).send({
+            message: err.message
         })
-        .catch(err => {
-            return res.status(500).send({
-                message: err.message
-            })
-        })
+    })
 }
 
+// modifier un client
 exports.updateOne = (req, res) => {
     Client.findByIdAndUpdate(
         req.params.id,
         req.body
     ).then(client => {
-        if (!client) {
+        if(!client) {
             return res.status(404).send({
-                message: "Client not found"
+                message: "Client inconnu !"
             })
         }
-        // res.send(user);
+        //res.send(user)
         Client.findById(req.params.id)
-            .then(newClient => {
-                res.send({
-                    new_client: newClient,
-                    old_client: client
-                });
-            })
+        .then(newClient => {
+            res.send({
+                new_client: newClient,
+                old_client: client
+            });
+        })
     }).catch(err => {
         return res.status(500).send({
             message: err.message
@@ -80,26 +80,27 @@ exports.updateOne = (req, res) => {
     })
 }
 
+// supprimer un client
 exports.deleteOne = (req, res) => {
     Client.findByIdAndRemove(req.params.id)
-        .then(client => {
-            if (!client) {
-                return res.status(404).send({
-                    message: "Client not found"
-                })
-            }
-            res.send({
-                // message: "User with id" + req.params.id + "deleted successfully"
-                message: `CLient with id ${req.params.id} deleted successfully`
+    .then(client => {
+        if(!client) {
+            return res.status(404).send({
+                message: "Client inconnu !"
             })
+        }
+        res.send({
+            message: `Client avec identifiant ${req.params.id} supprimé avec succès`
         })
+    })
 }
 
+// supprimer tous les clients
 exports.removeAll = (req, res) => {
-    Client.deleteMany((err) => {
-        if (err) {
+    Client.deleteMany(err => {
+        if(err) {
             res.send(err)
         }
-        res.send('Client removed');
-    });
+        res.send("Tous les clients supprimés avec succès")
+    })
 }

@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 const Schema = mongoose.Schema;
 
 const clientSchema = new Schema({
@@ -27,14 +28,13 @@ const clientSchema = new Schema({
         type: String
     },
     //FOREIGN KEY 
-    userId: {
+    /**userId: {
         type: Schema.Types.ObjectId, ref: 'user'
-    },
+    },*/
 }, {
     timestamps: true
 });
 
-module.exports = mongoose.model('client', clientSchema);
+const Client = mongoose.model('Client', clientSchema);
 
-//return javascript object {user Schema}
-//const user = mongoose.model('user', userSchema);
+module.exports = Client;

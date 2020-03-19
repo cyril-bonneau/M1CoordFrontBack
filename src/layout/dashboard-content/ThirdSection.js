@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ClientListe from './listes/ClientListe'
 
 class ThirdSection extends Component {
 
@@ -14,12 +15,12 @@ class ThirdSection extends Component {
                                         <div className="column mcb-column one-second column_tabs" style={{width: "100%"}}>
                                             <div className="jq-tabs tabs_wrapper tabs_horizontal ui-tabs ui-widget ui-widget-content ui-corner-all" style={{width: "97%"}}>
                                                 <ul className="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" style={{marginTop: "-26px",backgroundImage: "none",width: "1200px"}}>
-                                                    <li className="ui-state-default ui-corner-top" style={{width: "25%"}}>
+                                                    <li className="ui-state-default ui-corner-top  ui-tabs-active ui-state-active" style={{width: "25%"}}>
                                                         <a href="#tab-5e5f5526e287d-1" className="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-1">
                                                             Liste des clients
                                                         </a>
                                                     </li>
-                                                    <li className="ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="tab-5e5f5526e287d-2" aria-labelledby="ui-id-2" aria-selected="true" aria-expanded="true" style={{width: "25%"}}>
+                                                    <li className="ui-state-default ui-corner-top" role="tab" tabindex="0" aria-controls="tab-5e5f5526e287d-2" aria-labelledby="ui-id-2" aria-selected="true" aria-expanded="true" style={{width: "25%"}}>
                                                         <a href="#tab-5e5f5526e287d-2" className="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-2">
                                                             Liste des projets
                                                         </a>
@@ -36,36 +37,7 @@ class ThirdSection extends Component {
                                                     </li>
                                                 </ul>
                                                 <div id="tab-5e5f5526e287d-1" aria-labelledby="ui-id-1" className="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style={{display: "none"}}>
-                                                <table class="table table-striped">
-                                                    <thead>
-                                                        <tr>
-                                                        <th scope="col">#</th>
-                                                        <th scope="col">First</th>
-                                                        <th scope="col">Last</th>
-                                                        <th scope="col">Handle</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                        <th scope="row">1</th>
-                                                        <td>Mark</td>
-                                                        <td>Otto</td>
-                                                        <td>@mdo</td>
-                                                        </tr>
-                                                        <tr>
-                                                        <th scope="row">2</th>
-                                                        <td>Jacob</td>
-                                                        <td>Thornton</td>
-                                                        <td>@fat</td>
-                                                        </tr>
-                                                        <tr>
-                                                        <th scope="row">3</th>
-                                                        <td>Larry</td>
-                                                        <td>the Bird</td>
-                                                        <td>@twitter</td>
-                                                        </tr>
-                                                    </tbody>
-                                                    </table>
+                                                    <ClientListe />
                                                 </div>
                                                 <div id="tab-5e5f5526e287d-2" aria-labelledby="ui-id-2" className="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="false" style={{display: "block"}}>
                                                 <table class="table table-striped">
