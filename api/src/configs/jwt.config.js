@@ -1,3 +1,4 @@
 module.exports = {
-    secret: "supersecret"
+    secret: "Password",
+    //'database': 'mongodb://127.0.0.1:27017/tuto'  
 }
