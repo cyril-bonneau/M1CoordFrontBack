@@ -2,7 +2,11 @@ const express = require('express');
 const config = require('../configs/server.config');
 const bodyParser = require('body-parser');
 const apiRouter = require('../routes');
-const cors = require('cors')
+const cors = require('cors');
+
+//TES BY NSR
+const Routes = require('../routes/user.route');
+//END TEST
 
 //démarrer express
 const app = express();
@@ -11,34 +15,36 @@ const app = express();
 const jwt = require('jsonwebtoken');
 
 //Route to protect with token
-app.post('/api/tests', verifyToken, (req, res) => {
-    jwt.verify(req.token, 'secretkey', (err, authData) => {
-        if(err){
-            res.sendStatus(403);
-        }else{
-            res.json({
-                message:'test tested....',
-                authData
-            });
-        }
-    });
-});
+
+// app.post('/api/tests', verifyToken, (req, res) => {
+//     jwt.verify(req.token, 'secretkey', (err, authData) => {
+//         if(err){
+//             res.sendStatus(403);
+//         }else{
+//             res.json({
+//                 message:'test tested....',
+//                 authData
+//             });
+//         }
+//     });
+// });
 
 //Way to get the token
-app.post ('/api/login', (req, res) =>{
-    //MOCK User
-    const user ={
-        id: 1,
-        username: 'test',
-        email : 't@gmail.com'
-    }
 
-    jwt.sign({user},'secretkey', {expiresIn: '12h' }, (err, token) => {
-        res.json({
-            token
-        });
-    });
-})
+// app.post ('/api/login', (req, res) =>{
+//     //MOCK User
+//     const user ={
+//         id: 1,
+//         username: 'test',
+//         email : 't@gmail.com'
+//     }
+
+//     jwt.sign({user},'secretkey', {expiresIn: '12h' }, (err, token) => {
+//         res.json({
+//             token
+//         });
+//     });
+// })
 
 //middelware Function *******
 
@@ -46,24 +52,24 @@ app.post ('/api/login', (req, res) =>{
 //Authorization: Bearer <access_token>
 
 //Verify Token!
-function verifyToken(req, res, next){
-    //Get auth header value
-    const bearerHeader = req.headers['authorization'];
-    //check if tok is undefined 
-    if (typeof bearerHeader !== 'undefined'){
-    //Split at the space
-    const bearer = bearerHeader.split(' ');
-    //Get Token from array
-    const bearerToken = bearer[1];
-    //set the token
-    req.token = bearerToken;
-    //next middleware
-    next();
-    }else{
-        //Forbidden
-        res.sendStatus (403);
-    }
-}
+// function verifyToken(req, res, next){
+//     //Get auth header value
+//     const bearerHeader = req.headers['authorization'];
+//     //check if tok is undefined 
+//     if (typeof bearerHeader !== 'undefined'){
+//     //Split at the space
+//     const bearer = bearerHeader.split(' ');
+//     //Get Token from array
+//     const bearerToken = bearer[1];
+//     //set the token
+//     req.token = bearerToken;
+//     //next middleware
+//     next();
+//     }else{
+//         //Forbidden
+//         res.sendStatus (403);
+//     }
+// }
 
 
 // middleware
@@ -72,6 +78,10 @@ app.use(cors())
 
 //routes
 app.use('/api/v1', apiRouter);
+
+//TEST
+app.use('/api/auth', Routes);
+// END TEST
 
 exports.start = () => {
     let port = config.port;
