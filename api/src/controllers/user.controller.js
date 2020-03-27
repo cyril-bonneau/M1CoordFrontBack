@@ -11,7 +11,8 @@ exports.create = (req, res) => {
                 userMail: req.body.userMail,
                 userTelephone: req.body.userTelephone,
                 userStatus: req.body.userStatus,
-                userProfil: req.body.userProfil
+                userProfil: req.body.userProfil,
+                userPassword: req.body.userPassword
             })
             // if (err.error) {
             //     res.send(err);
