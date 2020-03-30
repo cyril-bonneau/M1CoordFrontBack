@@ -2,33 +2,30 @@ const User = require('../models/user.model');
 const bcrypt = require('bcrypt');
 const jwt = require ('jsonwebtoken');
 
- exports.create = (req, res) => {
-         //let hashedPassword = bcrypt.hashSync(req.body.password, 8);
-         //console.log(hashedPassword);
-         bcrypt.hash(req.body.userPassword, 10)
-        .then (hash =>{
-         const user = new User({               
-                 userName: req.body.userName,
-                 userSociety: req.body.userSociety,
-                 userSiret: req.body.userSiret,
-                 userMail: req.body.userMail,
-                 userTelephone: req.body.userTelephone,
-                 userStatus: req.body.userStatus,
-                 userProfil: req.body.userProfil,
-                 userPassword: hash
-            });
-             // // if (err.error) {
-             // //     res.send(err);
-             // // } else {
-         user.save()
-             .then(data => {
-                 res.send(data);
-             }).catch(err => {
-                 res.status(500).send({
-                     message: err.message
-                 })
-             });             
-         })
+exports.create = (req, res) => {
+        //let hashedPassword = bcrypt.hashSync(req.body.password, 8);
+        //console.log(hashedPassword);
+        const user = new User({
+                userName: req.body.userName,
+                userSociety: req.body.userSociety,
+                userSiret: req.body.userSiret,
+                userMail: req.body.userMail,
+                userTelephone: req.body.userTelephone,
+                userStatus: req.body.userStatus,
+                userProfil: req.body.userProfil,
+                userPassword: req.body.userPassword
+            })
+            // if (err.error) {
+            //     res.send(err);
+            // } else {
+        user.save()
+            .then(data => {
+                res.send(data);
+            }).catch(err => {
+                res.status(500).send({
+                    message: err.message
+                })
+            })
         }
 //
     // get all users

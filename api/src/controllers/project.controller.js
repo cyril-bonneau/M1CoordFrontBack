@@ -1,10 +1,12 @@
 const Projet = require('../models/project.model');
+const Project = require('../models/client.model');
 const bcrypt = require('bcrypt');
 
 exports.create = (req, res) => {
         //let hashedPassword = bcrypt.hashSync(req.body.password, 8);
         //console.log(hashedPassword);
         const projet = new Projet({
+                clientID: req.body._id,
                 projectTitle: req.body.projectTitle,
                 projectDevise: req.body.projectDevise,
                 projectStartDate: req.body.projectStartDate,
