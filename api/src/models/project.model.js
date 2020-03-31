@@ -24,6 +24,9 @@ const projectSchema = new Schema({
     projectEndDate: {
         type: String
     },
+    projectdelay: {
+        type: Number
+    },
     projectStatus: {
         type: String
     },
