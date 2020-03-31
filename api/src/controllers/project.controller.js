@@ -11,6 +11,7 @@ exports.create = (req, res) => {
                 projectDevise: req.body.projectDevise,
                 projectStartDate: req.body.projectStartDate,
                 projectEndDate: req.body.projectEndDate,
+                projectDelay: req.body.projectDelay,
                 projectStatus: req.body.projectStatus,
                 projectStack: req.body.projectStack,
                 projectCout: req.body.projectCout
