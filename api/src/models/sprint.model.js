@@ -21,9 +21,9 @@ const sprintSchema = new Schema({
         type: String
     },
     //Foreign Key **********
-    //taskId:[ {
-    //    type: Schema.Types.ObjectId, ref: 'task'
-    //}],
+    projectId:[ {
+        type: Schema.Types.ObjectId, ref: 'project'
+    }],
 }, {
     timestamps: true
 });

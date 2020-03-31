@@ -1,5 +1,10 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const uniqueValidator = require('mongoose-unique-validator');
+
+
+// var bcrypt = require('bcrypt');
+// mongoose.connect(config.database)
 
 const userSchema = new Schema({
     userName: {
@@ -10,7 +15,7 @@ const userSchema = new Schema({
     },
     userSociety: {
         type: String,
-        required: true,
+        //required: true,
         minlength: 4,
         maxlength: 128
     },
@@ -18,7 +23,8 @@ const userSchema = new Schema({
         type: String
     },
     userMail: {
-        type: String
+        type: String,
+        unique: true
     },
     userTelephone: {
         type: Number
@@ -29,8 +35,15 @@ const userSchema = new Schema({
     userProfil: {
         type: String
     },
+    userPassword: {
+        type: String,
+        required: true,
+        unique: true
+      },
 }, {
     timestamps: true
 });
+
+userSchema.plugin(uniqueValidator); 
 
 module.exports = mongoose.model('User', userSchema);

@@ -7,15 +7,25 @@ const client = require('../controllers/client.controller');
 const projet = require('../controllers/project.controller');
 const verifyToken = require('../helpers/verifyToken');
 
+//TEST
+const auth = require('../middleware/auth');
+
+//END OF TEST
+
+
 //*******************user Routers******************/
 
 //create  a new user
-router.post('/users', user.create);
+    router.post('/users', user.create);
 router.get('/users', user.findAll);
 router.get('/users/:id', user.findOne);
 router.post('/users/:id', user.updateOne);
 router.put('/users/:id', user.updateOne);
 router.delete('/users/:id', user.deleteOne);
+//** TEST */
+router.post('/login',auth, user.login);
+//END
+
 
 //*******************task Routers ***************/
 router.post('/tasks', task.create);
