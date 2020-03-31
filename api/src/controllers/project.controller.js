@@ -6,7 +6,7 @@ exports.create = (req, res) => {
         //let hashedPassword = bcrypt.hashSync(req.body.password, 8);
         //console.log(hashedPassword);
         const projet = new Projet({
-                clientID: req.body._id,
+                clientID: req.body.clientID,
                 projectTitle: req.body.projectTitle,
                 projectDevise: req.body.projectDevise,
                 projectStartDate: req.body.projectStartDate,
