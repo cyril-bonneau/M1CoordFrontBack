@@ -13,7 +13,7 @@ const projectSchema = new Schema({
         lowercase: true
     },
     projectDevise: {
-        type: String,
+        type: Number,
         required: true,
         minlength: 4,
         maxlength: 128
@@ -28,14 +28,10 @@ const projectSchema = new Schema({
         type: String
     },
     projectStack: {
-        type: Boolean
+        type: String
     },
     projectCout: {
         type: Number
-    },
-    //Foreign Key **********
-    clientId: {
-        type: Schema.Types.ObjectId, ref: 'client'
     },
 }, {
     timestamps: true
