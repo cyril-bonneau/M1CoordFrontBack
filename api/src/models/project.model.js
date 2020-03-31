@@ -25,7 +25,7 @@ const projectSchema = new Schema({
         type: String
     },
     projectdelay: {
-        type: String
+        type: Number
     },
     projectStatus: {
         type: String
