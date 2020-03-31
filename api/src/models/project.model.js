@@ -19,10 +19,10 @@ const projectSchema = new Schema({
         maxlength: 128
     },
     projectStartDate: {
-        type: Date
+        type: String
     },
     projectEndDate: {
-        type: Date
+        type: String
     },
     projectStatus: {
         type: String
