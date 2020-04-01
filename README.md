@@ -1,6 +1,6 @@
 Projet Coordination Front & Back
 
-Bellair Florian (front), Bonneau Cyril (back), Kaka Sidy (front), Trabelsi Nassir (back)
+Bellair Florian (front) https://github.com/FloDev91, Bonneau Cyril (back) https://github.com/cyril-bonneau, Kaka Sidy (front) https://github.com/sidskaka, Trabelsi Nassir (back) https://github.com/Nassirtra
 
 Démarche pour faire démarrer notre projet :
 Step 1 : le cloner
