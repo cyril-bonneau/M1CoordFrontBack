@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import '../../assets/sass/home/style.scss'
 import logo from '../../assets/img/1.png'
+import { withRouter } from 'react-router-dom'
 //import logo_header from '../../assets/img/logo.png'
 //import { Router, BrowserRouter } from 'react-router-dom'
 //import { Route } from 'react-router'
@@ -19,9 +20,12 @@ class ConnexionForm extends Component {
         }
     }
 
-    redirectPage () {
+    redirectPage(e) {
+        e.preventDefault();
         window.location.href = '/dash'
     }
+
+   
 
     /**handleChange = (event)=>{
         this.setState({
@@ -70,4 +74,4 @@ class ConnexionForm extends Component {
     }
 }
 
-export default ConnexionForm
+export default withRouter(ConnexionForm);
