@@ -19,3 +19,5 @@ Step 4 : démarrer les services :
 Liste de ce qui est fonctionnel :
 
 Inscription/Connexion/enregistrement et affichage de client, projet, sprint et taches.
+
+Pour le moment afin d'atteindre la page de dashboard il faut utiliser l'URL : http://localhost:3000/dash et c'est depuis cette page que vous pourrez ajouter et voir des clients, projets, sprints et tasks.
