@@ -5,40 +5,52 @@ const jwt = require ('jsonwebtoken');
 exports.create = (req, res) => {
         //let hashedPassword = bcrypt.hashSync(req.body.password, 8);
         //console.log(hashedPassword);
-        const user = new User({
-                userName: req.body.userName,
-                userSociety: req.body.userSociety,
-                userSiret: req.body.userSiret,
-                userMail: req.body.userMail,
-                userTelephone: req.body.userTelephone,
-                userStatus: req.body.userStatus,
-                userProfil: req.body.userProfil,
-                userPassword: req.body.userPassword
-            })
-            // if (err.error) {
-            //     res.send(err);
-            // } else {
-        user.save()
+        let hashedPassword = bcrypt.hashSync(req.body.userPassword, 8);
+    //console.log(hashedPassword);
+    const user = new User({
+        userName: req.body.userName,
+        userSociety: req.body.userSociety,
+        userSiret: req.body.userSiret,
+        userMail: req.body.userMail,
+        userTelephone: req.body.userTelephone,
+        userStatus: req.body.userStatus,
+        userProfil: req.body.userProfil,
+        userPassword: hashedPassword
+    })
+
+    User.findOne({
+        userMail: req.body.userMail
+    })
+    .then(us => {
+        if(!us) {
+            user.save()
             .then(data => {
-                res.send(data);
+                res.send(data)
             }).catch(err => {
                 res.status(500).send({
                     message: err.message
                 })
             })
+        }else{
+            res.json({ error: 'cet utilisateur existe déjà' })
         }
+    })
+    .catch(err => {
+        res.send('error '+ err)
+    })
+}
 //
     // get all users
 exports.findAll = (req, res) => {
     User.find()
-        .then(users => {
-            res.send(users);
+    .then(users => {
+        res.send(users);
+    })
+    .catch(err => {
+        res.status(500).send({
+            message: err.message || "Erreur sur la recherche"
         })
-        .catch(err => {
-            res.status(500).send({
-                message: err.message || "Some error occured when finding users."
-            })
-        })
+    })
 }
 
 exports.findOne = (req, res) => {
