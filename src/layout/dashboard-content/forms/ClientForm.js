@@ -76,7 +76,7 @@ class ClientForm extends Component {
     }
 
     onSubmit(e) {
-        e.preventDefault();
+        //e.preventDefault();
         const clientAdresse = this.state.clientAdresseRue +" "+this.state.clientAdresseVille +", "+this.state.clientAdresseCode;
 
         const client = {
@@ -92,6 +92,8 @@ class ClientForm extends Component {
 
         axios.post('http://localhost:3001/api/v1/client', client).then(res => console.log(res.data));
 
+        
+
         this.setState({
             clientDenomination: '',
             clientAdresse: '',
@@ -101,7 +103,7 @@ class ClientForm extends Component {
             clientMail: ''
         })
 
-        this.refreshPage();
+        //this.refreshPage();
     }
 
     refreshPage(){ 
@@ -170,7 +172,7 @@ class ClientForm extends Component {
                         </div>                       
                     </div>
                     <button type="submit" class="btn btn-success">Enregistrer</button>
-                    <button type="submit" class="btn btn-danger">Annuler</button>
+                    <button type="reset" class="btn btn-danger">Annuler</button>
                 </form>
             </div>
         )

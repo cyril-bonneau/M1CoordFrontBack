@@ -1,66 +1,154 @@
 import React, { Component } from 'react'
 import '../../../assets/sass/dashboard/style.scss'
+import axios from 'axios';
+
+const Projet = props => (
+    <option value={props.projet._id}>{props.projet.projectTitle}</option>
+)
 
 class SprintForm extends Component {
+    constructor(props)
+    {
+        super(props)
+
+        this.onChangeProjet = this.onChangeProjet.bind(this)
+        this.onChangeTitreSprint = this.onChangeTitreSprint.bind(this)
+        this.onChangeDateDebutSprint = this.onChangeDateDebutSprint.bind(this)
+        this.onChangeDateFinSprint = this.onChangeDateFinSprint.bind(this)
+        this.onChangeStatusSprint = this.onChangeStatusSprint.bind(this)
+        this.onSubmit = this.onSubmit.bind(this);
+
+        this.state = {
+            projets: [],
+            ProjetID:'',
+            sprintTitle:'',
+            sprintStartDate:'',
+            sprintEndDate:'',
+            sprintStatus:''
+        };
+    }
+
+    onChangeProjet(e) {
+        this.setState({
+            ProjetID: e.target.value
+        }) 
+    }
+    onChangeTitreSprint(e) {
+        this.setState({
+            sprintTitle: e.target.value
+        })
+    }
+    onChangeDateDebutSprint(e) {
+        this.setState({
+            sprintStartDate: e.target.value
+        })
+    }
+    onChangeDateFinSprint(e) {
+        this.setState({
+            sprintEndDate: e.target.value
+        })
+    }
+    onChangeStatusSprint(e) {
+        this.setState({
+            sprintStatus: e.target.value
+        })
+    }
+    onSubmit(e) {
+       // e.preventdefault();
+
+        const Sprint = {
+            ProjetID: this.state.ProjetID,
+            sprintTitle: this.state.sprintTitle,
+            sprintStartDate: this.state.sprintStartDate,
+            sprintEndDate: this.state.sprintEndDate,
+            sprintStatus: this.state.sprintStatus
+        }
+        console.log(Sprint);
+
+        axios.post('http://localhost:3001/api/v1/sprint', Sprint).then(res => console.log(res.data));
+
+        this.setState=({
+            ProjetID:'',
+            sprintTitle:'',
+            sprintStartDate:'',
+            sprintEndDate:'',
+            sprintStatus:''
+        })
+
+      //  this.refreshPage();
+    }
+
+    /**refreshPage(){ 
+        window.location.reload(); 
+    }*/
+
+    componentDidMount() {
+        axios.get('http://localhost:3001/api/v1/projet')
+        .then(response => {
+            this.setState({
+                projets: response.data
+            })
+        }).catch((error) => {
+            console.log(error)
+        })
+    }
+
+    projetListe() {
+        return this.state.projets.map(currentprojet => {
+            return <Projet projet={currentprojet} key={currentprojet._id} />
+        })
+    }
 
     render() {
         return (
             <div>
-                <form>
+                <form onSubmit={this.onSubmit}>
                     <div class="form-row">
                         <div className="form-row col-md-12">
                             <div className="form-group col-md-3">
-                                <label for="inputEmail4">Dénomination sociale</label>
+                                <label for="SelectProjet">Projet</label>
                             </div>
                             <div className="form-group col-md-9">
-                                <input type="text" className="form-control" id="inputDenomination4" placeholder="Veullez saisir une dénomination sociale..." />
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div className="form-group col-md-3">
-                                <label for="inputEmail4">Date de début</label>
-                            </div>
-                            <div className="form-group col-md-2">
-                                <input type="text" className="form-control" id="inputCity" placeholder="Jour..." />
-                            </div>
-                            <div className="form-group col-md-4">
-                                <input type="text" className="form-control" id="inputCity" placeholder="Mois..." style={{marginLeft: "13%"}} />
-                            </div>
-                            <div className="form-group col-md-2">
-                                <input type="text" className="form-control" id="inputZip" placeholder="Année..." style={{width: "95%"}} />
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div className="form-group col-md-3">
-                                <label for="inputEmail4">Date de fin</label>
-                            </div>
-                            <div className="form-group col-md-2">
-                                <input type="text" className="form-control" id="inputCity" placeholder="Jour..." />
-                            </div>
-                            <div className="form-group col-md-4">
-                                <input type="text" className="form-control" id="inputCity" placeholder="Mois..." style={{marginLeft: "13%"}} />
-                            </div>
-                            <div className="form-group col-md-2">
-                                <input type="text" className="form-control" id="inputZip" placeholder="Année..." style={{width: "95%"}} />
+                                <select className="form-control" id="SelectProjet" onChange={this.onChangeProjet} value={this.state.ProjetID}>
+                                    {this.projetListe()}
+                                </select>
                             </div>
                         </div>
                         <div className="form-row col-md-12">
                             <div className="form-group col-md-3">
-                                <label for="inputEmail4">Status</label>
+                                <label for="inputTitreSprint">Titre sprint</label>
                             </div>
-                            <div className="form-group col-md-8" style={{marginLeft: "8%"}}>
-                                <input type="radio" id="attente" name="attente"/> 
-                                <div className="toto" style={{marginLeft: "4%"}}>
-                                    Attente
-                                </div>  
-                                <input type="radio" id="cours" name="cours"/>
-                                <div className="toto" style={{marginLeft: "4%"}}>
-                                    En cours
-                                </div> 
-                                <input type="radio" id="fini" name="fini"/>
-                                <div className="toto" style={{marginLeft: "4%"}}>
-                                    Terminé
-                                </div>
+                            <div className="form-group col-md-9">
+                                <input type="text" className="form-control" placeholder="Veullez saisir un titre de sprint" value={this.state.sprintTitle} onChange={this.onChangeTitreSprint} />
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div className="form-group col-md-3">
+                                <label for="inputDateDebutSprint">Date de début</label>
+                            </div>
+                            <div className="form-group col-md-6">
+                                <input type="date" className="form-control" id="inputDateDebutSprint" value={this.state.sprintStartDate} onChange={this.onChangeDateDebutSprint} />
+                            </div>
+                            
+                        </div>
+                        <div class="form-row">
+                            <div className="form-group col-md-3">
+                                <label for="inputDateFinSprint">Date de fin</label>
+                            </div>
+                            <div className="form-group col-md-6">
+                                <input type="date" className="form-control" id="inputDateFinSprint" value={this.state.sprintEndDate} onChange={this.onChangeDateFinSprint}  />
+                            </div>
+                        </div>
+                        <div className="form-row col-md-12">
+                            <div className="form-group col-md-3">
+                                <label for="inputstatusSprint">Status</label>
+                            </div>
+                            <div className="form-group col-md-8">
+                                <select className="form-control" id="selectClient" onChange={this.onChangeStatusSprint} value={this.state.sprintStatus} >
+                                    <option value="Attente">Attente</option>
+                                    <option value="EnCours">En cours</option>
+                                    <option value="Termine">Terminé</option>
+                                </select>
                             </div>
                         </div>                     
                     </div>
