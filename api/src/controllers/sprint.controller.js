@@ -5,6 +5,7 @@ exports.create = (req, res) => {
         //let hashedPassword = bcrypt.hashSync(req.body.password, 8);
         //console.log(hashedPassword);
         const sprint = new Sprint({
+                projectID: req.body.projectID,
                 sprintTitle: req.body.sprintTitle,
                 sprintStartDate: req.body.sprintStartDate,
                 sprintEndDate: req.body.sprintEndDate,

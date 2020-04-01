@@ -3,6 +3,10 @@ const Schema = mongoose.Schema;
 const Sprint = require('../models/sprint.model');
 
 const taskSchema = new Schema({
+    sprintID: {
+        type: String,
+        required: true
+    },
     taskName: {
         type: String,
         required: true,
@@ -22,12 +26,9 @@ const taskSchema = new Schema({
     },
     taskTime: {
         type: Number
-    },
-    //Foreign Key **********
-    sprintId:[
-        {type: Schema.Types.ObjectId, ref: 'sprint'}
-    ],
-}, {
+    }
+}, 
+{
     timestamps: true
 });
 
