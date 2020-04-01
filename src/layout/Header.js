@@ -6,6 +6,7 @@ import InscriptionForm from './home-content/InscriptionForm'
 import ConnexionForm from './home-content/ConnexionForm'
 
 class Header extends Component {
+    
     constructor(props) {
         super(props);
 

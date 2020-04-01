@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import ClientListe from './listes/ClientListe'
+import ProjetList from './listes/ProjetListe'
+import SprintList from './listes/SprintListe'
+import TacheList from './listes/TacheListe'
 
 class ThirdSection extends Component {
 
@@ -31,7 +34,7 @@ class ThirdSection extends Component {
                                                         </a>
                                                     </li>
                                                     <li className="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tab-5e5f5526e287d-4" aria-labelledby="ui-id-4" aria-selected="false" aria-expanded="false" style={{width: "291px"}}>
-                                                        <a href="#tab-5e5f5526e287d-3" className="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-4">
+                                                        <a href="#tab-5e5f5526e287d-4" className="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-4">
                                                             Liste des tâches
                                                         </a>
                                                     </li>
@@ -40,100 +43,14 @@ class ThirdSection extends Component {
                                                     <ClientListe />
                                                 </div>
                                                 <div id="tab-5e5f5526e287d-2" aria-labelledby="ui-id-2" className="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="false" style={{display: "block"}}>
-                                                <table class="table table-striped">
-                                                    <thead>
-                                                        <tr>
-                                                        <th scope="col">#</th>
-                                                        <th scope="col">First</th>
-                                                        <th scope="col">Last</th>
-                                                        <th scope="col">Handle</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                        <th scope="row">1</th>
-                                                        <td>Mark</td>
-                                                        <td>Otto</td>
-                                                        <td>@mdo</td>
-                                                        </tr>
-                                                        <tr>
-                                                        <th scope="row">2</th>
-                                                        <td>Jacob</td>
-                                                        <td>Thornton</td>
-                                                        <td>@fat</td>
-                                                        </tr>
-                                                        <tr>
-                                                        <th scope="row">3</th>
-                                                        <td>Larry</td>
-                                                        <td>the Bird</td>
-                                                        <td>@twitter</td>
-                                                        </tr>
-                                                    </tbody>
-                                                    </table>
+                                                    
+                                                    <ProjetList />
                                                 </div>
                                                 <div id="tab-5e5f5526e287d-3" aria-labelledby="ui-id-3" className="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style={{display: "none"}}>
-                                                <table class="table table-striped">
-                                                    <thead>
-                                                        <tr>
-                                                        <th scope="col">#</th>
-                                                        <th scope="col">First</th>
-                                                        <th scope="col">Last</th>
-                                                        <th scope="col">Handle</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                        <th scope="row">1</th>
-                                                        <td>Mark</td>
-                                                        <td>Otto</td>
-                                                        <td>@mdo</td>
-                                                        </tr>
-                                                        <tr>
-                                                        <th scope="row">2</th>
-                                                        <td>Jacob</td>
-                                                        <td>Thornton</td>
-                                                        <td>@fat</td>
-                                                        </tr>
-                                                        <tr>
-                                                        <th scope="row">3</th>
-                                                        <td>Larry</td>
-                                                        <td>the Bird</td>
-                                                        <td>@twitter</td>
-                                                        </tr>
-                                                    </tbody>
-                                                    </table>                
+                                                    <SprintList />               
                                                 </div>
                                                 <div id="tab-5e5f5526e287d-4" aria-labelledby="ui-id-4" className="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="true" style={{display: "none"}}>
-                                                <table class="table table-striped">
-                                                    <thead>
-                                                        <tr>
-                                                        <th scope="col">#</th>
-                                                        <th scope="col">First</th>
-                                                        <th scope="col">Last</th>
-                                                        <th scope="col">Handle</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                        <th scope="row">1</th>
-                                                        <td>Mark</td>
-                                                        <td>Otto</td>
-                                                        <td>@mdo</td>
-                                                        </tr>
-                                                        <tr>
-                                                        <th scope="row">2</th>
-                                                        <td>Jacob</td>
-                                                        <td>Thornton</td>
-                                                        <td>@fat</td>
-                                                        </tr>
-                                                        <tr>
-                                                        <th scope="row">3</th>
-                                                        <td>Larry</td>
-                                                        <td>the Bird</td>
-                                                        <td>@twitter</td>
-                                                        </tr>
-                                                    </tbody>
-                                                    </table>
+                                                    <TacheList />
                                                 </div>
                                             </div>
                                         </div>

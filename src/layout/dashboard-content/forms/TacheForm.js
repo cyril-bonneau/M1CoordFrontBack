@@ -20,10 +20,10 @@ class TacheForm extends Component {
         this.state = {
             sprints: [],
             SprintID:'',
-            sprintTitle:'',
-            sprintStartDate:'',
-            sprintEndDate:'',
-            sprintStatus:''
+            taskName:'',
+            taskDescription:'',
+            taskStatus:'',
+            taskTime:''
         };
     }
 

@@ -7,6 +7,7 @@ import logo from '../../assets/img/1.png'
 //import BodyDashboard from './dashboard-content/Body'
 //import { useHistory } from "react-router-dom";
 //import Teste from './Teste'
+  
 
 class ConnexionForm extends Component {
     constructor(props) {
@@ -18,7 +19,11 @@ class ConnexionForm extends Component {
         }
     }
 
-    handleChange = (event)=>{
+    redirectPage () {
+        window.location.href = '/dash'
+    }
+
+    /**handleChange = (event)=>{
         this.setState({
             [event.target.name]:event.target.value
         })
@@ -31,12 +36,17 @@ class ConnexionForm extends Component {
         //history.push("/dashboard");
         alert("teste")
         //return()
-    }
+    }*/
 
     render() {
         return (
             <div>
-                <button onClick={() => document.getElementById('connexion-wrapper').style.display="block"} className="connexion-button">
+                <form onSubmit={this.redirectPage}>
+                    <button className="connexion-button">
+                        connexion
+                    </button>
+                </form>
+                {/*<button onClick={() => document.getElementById('connexion-wrapper').style.display="block"} className="connexion-button">
                     connexion
                 </button>
 
@@ -54,7 +64,7 @@ class ConnexionForm extends Component {
                             <button className="submit-button" type="submit" onClick={this.testeFunction}>Connexion</button>     
                         </div>
                     </form>
-                </div>
+                </div>*/}
             </div>
         )
     }
