@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const sprintSchema = new Schema({
+    projectID: {
+        type: String,
+        required: true
+    },
     sprintTitle: {
         type: String,
         required: true,
@@ -20,10 +24,6 @@ const sprintSchema = new Schema({
     sprintStatus: {
         type: String
     },
-    //Foreign Key **********
-    projectId:[ {
-        type: Schema.Types.ObjectId, ref: 'project'
-    }],
 }, {
     timestamps: true
 });
